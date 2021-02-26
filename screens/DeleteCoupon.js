@@ -1,26 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useFonts } from 'expo-font';
-
-import Logo from './Logo';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const DeleteCoupon = ({ navigation }) => {
 
-    const [loaded] = useFonts({
-        bold: require('../assets/fonts/opensansbold.ttf'),
-        semibold: require('../assets/fonts/opensanssemibold.ttf'),
-        medium: require('../assets/fonts/opensansregular.ttf')
-    });
-    if (!loaded) {
-        return null;
-    }
-
     return (
         <View style={styles.container}>
-            <Logo />
-            <View style={styles.head}>
+           <View style={styles.head}>
+                <TouchableOpacity>
+                    <Icon name="arrow-back" onPress={() => navigation.navigate("Offer")} style={styles.menu} />
+                </TouchableOpacity>
                 <Text style={styles.dashboard}>Delete Coupon</Text>
-                <Text style={styles.back} onPress={() => navigation.navigate("Coupon")}>Back</Text>
             </View>
             <View style={styles.options}>
                 <Text style={styles.texts}>Delete</Text>
@@ -47,24 +37,36 @@ const styles = StyleSheet.create({
     },
     head: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
         backgroundColor: '#f5fffa',
-        marginTop: 80,
-        paddingBottom: 40
+        marginTop: 30,
+        paddingBottom: 40,
+        paddingLeft: 60,
+        paddingRight: 110,
+        // marginRight:30
+    },
+    menu: {
+        fontSize: 30,
+        color: '#FDC913',
+        marginTop: 6,
+        paddingRight: 40,
+        // marginRight: 100
     },
     dashboard: {
-        fontSize: 18,
-        paddingLeft: 110,
+        fontSize: 30,
+        // paddingLeft: 100,
         paddingBottom: 5,
         color: '#696969',
-        fontFamily: 'semibold',
-        marginRight: 1
+        fontFamily: 'OpenSansBold',
+        // marginRight:130
     },
     back: {
         fontSize: 13,
         paddingLeft: 100,
         paddingTop: 4,
         color: '#696969',
-        fontFamily: 'semibold',
+        fontFamily: 'OpenSansSemiBold',
+
     },
     options: {
         paddingTop: 10,
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 25,
         color: '#696969',
-        fontFamily: 'semibold'
+        fontFamily: 'OpenSansSemiBold',
     },
     body: {
         flexDirection: 'column',
@@ -91,7 +93,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#696969',
         fontSize: 14,
-        fontFamily: 'semibold'
+        fontFamily: 'OpenSansSemiBold',
     },
     option: {
         paddingTop: 12,
@@ -120,7 +122,7 @@ const styles = StyleSheet.create({
         color: 'white',
         borderRadius: 30,
         fontSize: 12,
-        fontFamily: 'semibold'
+        fontFamily: 'OpenSansSemiBold',
     }
 });
 
