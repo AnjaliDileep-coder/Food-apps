@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 
-const DeleteCoupon = ({ navigation }) => {
+const DeleteBanner = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
@@ -10,7 +10,7 @@ const DeleteCoupon = ({ navigation }) => {
                 <TouchableOpacity>
                     <Icon name="arrow-back" onPress={() => navigation.navigate("Offer")} style={styles.menu} />
                 </TouchableOpacity>
-                <Text style={styles.dashboard}>Delete Coupon</Text>
+                <Text style={styles.dashboard}>Delete Banner</Text>
             </View>
             <View style={styles.options}>
                 <Text style={styles.texts}>Delete</Text>
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default DeleteCoupon;
+export default DeleteBanner;
